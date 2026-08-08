@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-08-08",
+  "displayDate": "2026年8月8日",
+  "dayNumber": 0,
+  "market": "美国",
+  "edition": "Day 0 基线",
+  "summary": "第一次正式拉取：先建立五家品牌当前正在做什么的可回看快照。从下一期起，新增、变化、结束与持续将按上一期严格对比。",
+  "thesis": {
+    "eyebrow": "TODAY'S THESIS",
+    "title": "AI 不再是共同卖点，而是五种不同的商业模式。",
+    "body": "真正值得持续监控的，不只是竞品又出了什么 Camera，而是它这个月越来越想让消费者为什么付钱。"
+  },
+  "metrics": [
+    { "value": "5", "label": "持续监控品牌" },
+    { "value": "2", "label": "近 30 天确定动作" },
+    { "value": "2", "label": "本周弱信号" },
+    { "value": "0", "label": "本周重大新品 / Campaign" }
+  ],
+  "topSignals": [
+    {
+      "rank": 1,
+      "brand": "ring",
+      "priority": "high",
+      "status": "近30天变化",
+      "title": "正式进入更重的企业 / 商业安防",
+      "judgment": "Ring 的边界正从 Home Security 向 Property 与 Site Security 外扩。"
+    },
+    {
+      "rank": 2,
+      "brand": "simplisafe",
+      "priority": "high",
+      "status": "近30天变化",
+      "title": "大规模进入 Walmart",
+      "judgment": "用低门槛 Starter Kit 打开新的大众市场订阅漏斗。"
+    },
+    {
+      "rank": 3,
+      "brand": "eufy",
+      "priority": "high",
+      "status": "持续",
+      "title": "Local AI + NVR + 本地存储成为核心叙事",
+      "judgment": "与 Cloud AI + Subscription 形成清晰竞争轴。"
+    },
+    {
+      "rank": 4,
+      "brand": "google-nest",
+      "priority": "medium-high",
+      "status": "持续",
+      "title": "Gemini 深入摄像头与 Home Premium",
+      "judgment": "AI 正在成为整套智能家居订阅的升级理由。"
+    },
+    {
+      "rank": 5,
+      "brand": "arlo",
+      "priority": "medium-high",
+      "status": "持续",
+      "title": "当前硬件阵容完整，AI 功能集中进 Secure",
+      "judgment": "硬件是入口，Arlo Intelligence 才是商业核心。"
+    }
+  ],
+  "brands": [
+    {
+      "id": "ring",
+      "name": "Ring",
+      "monogram": "R",
+      "accent": "#56b8ff",
+      "route": "AI + Neighborhood + Services + Commercial Security",
+      "heroProduct": "Elite 360 4K / Mobile Security Tower",
+      "heroMessage": "从家庭门口走向整片物业",
+      "mainOffer": "Elite 360 $999.99；Tower $4,999.99 起",
+      "aiProposition": "Video Search / Descriptions / Familiar Faces",
+      "subscriptionProposition": "Protect Pro $19.99/月；Virtual Security Guard $99/月",
+      "mainChannel": "DTC + Services + Commercial",
+      "snapshot": [
+        {
+          "id": "ring-commercial-expansion",
+          "status": "近30天变化",
+          "category": "战略 / 新品",
+          "firstObserved": "2026-07-08",
+          "importance": 5,
+          "title": "从家庭安防明显向商业与现场安防扩张",
+          "summary": "Ring 于 7 月 8 日开售 Elite 360 4K 与 Mobile Security Tower，直接覆盖施工现场、停车场和活动场地。",
+          "detail": "Elite 360 以 6 个 4K 视角形成 360° 全景，定价 $999.99；Mobile Security Tower 起价 $4,999.99，并提供太阳能、电池与 LTE 等配置。",
+          "analysis": "这是本期最重的边界变化。Ring 没有另起一套系统，而是继续把 4K Camera、Ring Intelligence、视频搜索和订阅串在同一生态里。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "Ring 官方发布", "url": "https://blog.ring.com/about-ring/ring-mobile-security-tower-is-here/" },
+            { "label": "Elite 360 官方页", "url": "https://ring.com/products/ring-elite-360" },
+            { "label": "Mobile Tower 官方页", "url": "https://ring.com/products/mobile-security-tower-iloq-solar-kit-2x-battery" }
+          ]
+        },
+        {
+          "id": "ring-ai-subscription",
+          "status": "持续",
+          "category": "订阅 / AI",
+          "firstObserved": "2026-08-08",
+          "importance": 5,
+          "title": "AI 正在成为高阶订阅的核心理由",
+          "summary": "Protect 从 Solo $4.99/月延伸至 Pro $19.99/月与 Virtual Security Guard $99/月，AI 能力主要进入 Pro 层。",
+          "detail": "Pro 包含 Video Descriptions、Familiar Faces、Active Warnings、Unusual Event Alerts 与 Video Search；还可增加 Pro Intelligence 和 24/7 Recording。",
+          "analysis": "建议长期跟踪：原本属于 Camera 的能力，有多少正在转为 AI Subscription Feature。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "Ring Plans", "url": "https://ring.com/plans" },
+            { "label": "2026 计划说明", "url": "https://ring.com/support/articles/v5hc7/introducing-ring-plans?redirect=true" }
+          ]
+        },
+        {
+          "id": "ring-appstore",
+          "status": "持续",
+          "category": "平台 / 生态",
+          "firstObserved": "2026-08-08",
+          "importance": 4,
+          "title": "Ring Appstore 把摄像头数据变成平台能力",
+          "summary": "公开应用已覆盖老人照护、跌倒监测、宠物健康、多物业管理、非法倾倒、工地延时与包裹保护。",
+          "detail": "Ring 正在尝试从 Camera → Security Platform → Camera Data Platform。",
+          "analysis": "这不是短期促销，而是值得按月观察的生态信号。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "Ring Appstore", "url": "https://ring.com/appstore" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "simplisafe",
+      "name": "SimpliSafe",
+      "monogram": "S",
+      "accent": "#ff6f57",
+      "route": "Professional Monitoring + Human Intervention",
+      "heroProduct": "Walmart Exclusive 7-piece System",
+      "heroMessage": "Built for security. Not surveillance.",
+      "mainOffer": "$199.99 Walmart 独家 Starter Kit",
+      "aiProposition": "AI detection → Live Agent intervention",
+      "subscriptionProposition": "Monitoring + Active Guard",
+      "mainChannel": "DTC + Walmart 800+ stores",
+      "snapshot": [
+        {
+          "id": "simplisafe-walmart",
+          "status": "近30天变化",
+          "category": "渠道 / 零售",
+          "firstObserved": "2026-07-08",
+          "importance": 5,
+          "title": "全面扩张 Walmart，打开大众市场获客漏斗",
+          "summary": "SimpliSafe 进入 Walmart.com 及全美 800+ 家门店，并推出 $199.99 的 Walmart 独家 7 件套。",
+          "detail": "线下曝光 → 低价 Starter Kit → 安装 → Professional Monitoring Subscription，形成一条区别于纯 DTC 的增长路径。",
+          "analysis": "后续应单列监控 Walmart、Best Buy、Costco 与 Amazon 的独家 SKU、Bundle 和价格。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "SimpliSafe / PR Newswire", "url": "https://www.prnewswire.com/news-releases/simplisafe-expands-retail-presence-at-walmart-making-award-winning-home-security-even-more-accessible-302819953.html" },
+            { "label": "SimpliSafe Press Room", "url": "https://press.simplisafe.com/" }
+          ]
+        },
+        {
+          "id": "simplisafe-positioning",
+          "status": "持续",
+          "category": "品牌 / 服务",
+          "firstObserved": "2026-08-08",
+          "importance": 4,
+          "title": "核心定位从“看见”落在“有人替你处理”",
+          "summary": "当其他品牌强调摄像头能看懂什么，SimpliSafe 更强调 AI 发现威胁后由 Live Agent 主动干预。",
+          "detail": "Active Guard 把摄像头、Monitoring Center、真人判断、对讲、警报与响应连接成服务链。",
+          "analysis": "AI Detection → Human Intervention 是值得长期观察的 creative territory。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "Active Guard 官方说明", "url": "https://support.simplisafe.com/articles/outdoor-cameras/what-is-simplisafe-active-guard-outdoor-protection" },
+            { "label": "Monitoring Plans", "url": "https://support.simplisafe.com/page/monitoring-plans" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eufy",
+      "name": "eufy Security",
+      "monogram": "E",
+      "accent": "#55d9b3",
+      "route": "Local AI + 本地存储 + No Cloud Dependency",
+      "heroProduct": "NVR Security System S4 Max / eufyCam S4",
+      "heroMessage": "Local AI Agent，智能留在家里",
+      "mainOffer": "S4 / S4 Max 当前核心安防坑位",
+      "aiProposition": "Local AI + Cross-camera Tracking + Smart Search",
+      "subscriptionProposition": "本地处理 / 本地存储 / 无订阅依赖",
+      "mainChannel": "DTC + Local ecosystem",
+      "snapshot": [
+        {
+          "id": "eufy-s4",
+          "status": "持续",
+          "category": "产品 / 官网",
+          "firstObserved": "2026-08-08",
+          "importance": 5,
+          "title": "S4 / S4 Max 让 Local AI 成为主叙事",
+          "summary": "核心卖点已经从单纯分辨率升级为 Local AI Agent、跨摄像头追踪、Smart Video Search、24/7 Recording 与本地存储。",
+          "detail": "S4 Max 主打本地 AI NVR；eufyCam S4 把 4K bullet 与双 2K PTZ 组合在一个系统中。两者均为当前阵容，不作为本月新品误报。",
+          "analysis": "eufy 正建立与 Cloud AI + Subscription 不同的竞争路线。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "S4 Max 官方页", "url": "https://www.eufy.com/nvr-security-system-s4-max" },
+            { "label": "eufyCam S4 官方页", "url": "https://www.eufy.com/eufycam-s4" },
+            { "label": "2026 产品阵容指南", "url": "https://www.eufy.com/blogs/security-camera/eufy-security-camera-buying-guide" }
+          ]
+        },
+        {
+          "id": "eufy-homebase-s1",
+          "status": "持续",
+          "category": "平台 / Edge AI",
+          "firstObserved": "2026-08-08",
+          "importance": 5,
+          "title": "HomeBase 从 Hub 升级为 Edge AI 中心",
+          "summary": "HomeBase Professional S1 把 4G Failover、24h 备用电池、最高 16TB 本地存储、PoE 与 EdgeAICore AI 放在同一设备里。",
+          "detail": "其方向更接近“AI 就放在你家里”，与 Ring、Google、Arlo 的云端 AI 订阅路径形成对照。",
+          "analysis": "如果本地 AI 是最大卖点，连接稳定性与回放体验就会成为最关键的信任指标。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "HomeBase Professional S1", "url": "https://www.eufy.com/products/t9000121" },
+            { "label": "S1 官方支持", "url": "https://service.eufy.com/article-description/Eufy-HomeBase-Pro-In-App-Setup-Guide" }
+          ]
+        },
+        {
+          "id": "eufy-stability",
+          "status": "弱信号",
+          "category": "口碑 / 社区",
+          "firstObserved": "2026-08-01",
+          "importance": 2,
+          "title": "连接、HomeBase 与回放稳定性讨论需继续观察",
+          "summary": "最近一周社区出现 Camera Offline、HomeBase Connectivity 与视频回放相关讨论。",
+          "detail": "社区个案不足以证明系统性故障，当前只记录为低置信度的观察项。",
+          "analysis": "不将用户讨论直接升级成品牌事实；若同类问题连续出现，再提高优先级。",
+          "timeframes": ["daily", "seven", "archive"],
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "arlo",
+      "name": "Arlo",
+      "monogram": "A",
+      "accent": "#e0cd63",
+      "route": "AI Camera + Subscription SaaS",
+      "heroProduct": "Essential / Pro 6 / Ultra 3 lineup",
+      "heroMessage": "AI-powered protection across the lineup",
+      "mainOffer": "完整硬件矩阵 + Secure Trial",
+      "aiProposition": "Recognition + Custom Detection + Video Search",
+      "subscriptionProposition": "Secure Plus / Premium",
+      "mainChannel": "Retail + DTC + Subscription",
+      "snapshot": [
+        {
+          "id": "arlo-lineup",
+          "status": "持续",
+          "category": "产品矩阵",
+          "firstObserved": "2026-08-08",
+          "importance": 4,
+          "title": "当前 2026 硬件阵容已完成全系列换代",
+          "summary": "Essential 3rd Gen、Indoor / Pan Tilt、Pro 6th Gen 与 Ultra 3rd Gen 已构成完整在售矩阵。",
+          "detail": "官方资料显示这一代硬件于 2025 年发布；本期将其作为持续中的当前阵容，而非 2026 年新发布。",
+          "analysis": "硬件覆盖面已完整，接下来更值得监控的是 AI 功能如何分层进入订阅。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "Arlo 全线发布说明", "url": "https://investor.arlo.com/press-releases/press-release-details/2025/ARLO-UNVEILS-ALL-NEW-LINEUP-OF-SMART-HOME-SECURITY-SOLUTIONS-WITH-ADVANCED-AI-POWERED-ARLO-INTELLIGENCE/default.aspx" },
+            { "label": "当前产品阵容", "url": "https://kb.arlo.com/000063709/Arlo-Camera-and-Video-Doorbell-Product-Lineup" }
+          ]
+        },
+        {
+          "id": "arlo-intelligence",
+          "status": "持续",
+          "category": "订阅 / AI",
+          "firstObserved": "2026-08-08",
+          "importance": 5,
+          "title": "Arlo Intelligence 才是真正的商业核心",
+          "summary": "Person / Vehicle Recognition、Custom Detection、Event Captions、Video Search、Fire 与 Advanced Audio Detection 等能力集中进 Secure。",
+          "detail": "美国官方价以年付口径为 Single Camera Plus $7.99/月、Unlimited Plus $17.99/月、Premium $24.99/月。",
+          "analysis": "可与 Ring 并行观察：谁更积极地把 AI Feature 货币化。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "Arlo Secure", "url": "https://us.arlo.com/pages/arlo-secure" },
+            { "label": "Secure Trial AI 功能", "url": "https://kb.arlo.com/000063174/What-is-included-in-the-Arlo-Secure-trial" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "google-nest",
+      "name": "Google Nest",
+      "monogram": "G",
+      "accent": "#b69cff",
+      "route": "Gemini + Whole Smart Home Ecosystem",
+      "heroProduct": "Nest Cam / Doorbell 2K generation",
+      "heroMessage": "2K clarity + Gemini smarts",
+      "mainOffer": "Hardware → Gemini → Home Premium",
+      "aiProposition": "Ask Home + AI event descriptions",
+      "subscriptionProposition": "$10 Standard / $20 Advanced",
+      "mainChannel": "Google Store + Whole-home ecosystem",
+      "snapshot": [
+        {
+          "id": "google-gemini-hardware",
+          "status": "持续",
+          "category": "生态 / AI",
+          "firstObserved": "2026-08-08",
+          "importance": 5,
+          "title": "Nest Camera 战略已变成 Gemini for Home 战略",
+          "summary": "Nest Cam Outdoor 2nd Gen、Indoor 3rd Gen 与 Doorbell 3rd Gen 统一强调 2K 与 Gemini。",
+          "detail": "这代硬件于 2025 年发布；本期记录的是 Gemini 持续占据当前产品叙事，而非误报为本月新品。",
+          "analysis": "Google 更像在卖 Gemini-powered Smart Home，Security 是其中最重要的场景之一。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "Google 官方发布", "url": "https://blog.google/products-and-platforms/devices/google-nest/new-nest-cams-home-speaker-walmart/" },
+            { "label": "Google Store Nest Cams", "url": "https://store.google.com/us/category/nest_cams?hl=en-US" }
+          ]
+        },
+        {
+          "id": "google-home-premium",
+          "status": "持续",
+          "category": "订阅 / AI",
+          "firstObserved": "2026-08-08",
+          "importance": 5,
+          "title": "AI 功能成为 Home Premium 的升级理由",
+          "summary": "Standard 为 $10/月或 $100/年；Advanced 为 $20/月或 $200/年，并增加详细 AI 事件描述与 Ask Home 视频搜索。",
+          "detail": "摄像头硬件、Gemini 理解与整套 Google Home 订阅被明确串联。",
+          "analysis": "应持续跟踪免费基础能力与 Advanced 专属能力之间的边界。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "Home Premium 官方介绍", "url": "https://blog.google/products-and-platforms/devices/google-nest/googe-home-premium-google-ai-pro-subscription/" },
+            { "label": "Home Premium 支持说明", "url": "https://support.google.com/product-documentation/answer/12657252?hl=en" }
+          ]
+        }
+      ]
+    }
+  ],
+  "sevenDay": {
+    "range": "2026-08-02 — 2026-08-08",
+    "headline": "本周无足够确定、足够重大的官方新品或大型新 Campaign。",
+    "summary": "没有重大变化也是结果。日报不为凑数量制造伪变化；本周只保留两个需要复核的社区弱信号。",
+    "events": [
+      {
+        "date": "08.01—08.05",
+        "brand": "eufy",
+        "status": "弱信号",
+        "title": "连接 / HomeBase / 回放稳定性讨论出现",
+        "note": "社区个案，尚不能认定为系统性问题。"
+      },
+      {
+        "date": "本周",
+        "brand": "simplisafe",
+        "status": "弱信号",
+        "title": "Outdoor Camera detection 表现出现个案质疑",
+        "note": "仅作低置信度口碑观察，不视为产品策略变化。"
+      }
+    ]
+  },
+  "thirtyDay": {
+    "range": "2026-07-10 — 2026-08-08",
+    "headline": "五家都在讲 AI，但付费理由已经分叉。",
+    "summary": "本月最明确的新动作来自 Ring 的商业安防扩张与 SimpliSafe 的 Walmart 渠道扩张；其他三家以持续中的核心商业路线为主。",
+    "routes": [
+      { "brand": "eufy", "label": "Local AI", "detail": "本地存储 / 无云依赖" },
+      { "brand": "arlo", "label": "AI SaaS", "detail": "硬件入口 / Secure 变现" },
+      { "brand": "ring", "label": "Platform", "detail": "社区 / 服务 / 商业安防" },
+      { "brand": "simplisafe", "label": "Intervention", "detail": "专业监控 / 真人处置" },
+      { "brand": "google-nest", "label": "Ecosystem", "detail": "Gemini / 全屋智能" }
+    ]
+  },
+  "methodology": [
+    "优先记录官网、产品、价格、订阅、渠道与 Campaign 的可验证变化。",
+    "社区讨论仅作为弱信号，不直接升级为品牌事实。",
+    "Day 0 用于建立基线；从下一期起按上一期严格标记新增、变化、结束与持续。",
+    "本期已校正时间口径：Arlo、Google Nest 与 eufy 的相关硬件主要发布于 2025，当前只作为持续阵容与战略，不误报为 2026 新品。"
+  ]
+}
