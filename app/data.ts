@@ -1,5 +1,6 @@
 export type BrandId =
   | "all"
+  | "reolink"
   | "eufy"
   | "arlo"
   | "simplisafe"
@@ -31,6 +32,7 @@ export interface SnapshotItem {
 
 export interface BrandSnapshot {
   id: Exclude<BrandId, "all">;
+  role: "owned" | "competitor";
   name: string;
   monogram: string;
   accent: string;
@@ -56,6 +58,7 @@ export interface TopSignal {
 export interface MarketingEvent {
   id: string;
   brand: Exclude<BrandId, "all">;
+  relatedBrands?: Exclude<BrandId, "all">[];
   date: string;
   type: MarketingEventType;
   verification: "已确认" | "持续观察";
@@ -92,6 +95,7 @@ export interface Report {
     events: {
       date: string;
       brand: Exclude<BrandId, "all">;
+      relatedBrands?: Exclude<BrandId, "all">[];
       status: SignalStatus;
       type?: MarketingEventType;
       title: string;
@@ -124,6 +128,7 @@ export const reports = Object.values(modules)
 
 export const brandOrder: BrandId[] = [
   "all",
+  "reolink",
   "eufy",
   "arlo",
   "simplisafe",
@@ -133,6 +138,7 @@ export const brandOrder: BrandId[] = [
 
 export const brandLabels: Record<BrandId, string> = {
   all: "全部品牌",
+  reolink: "Reolink",
   eufy: "eufy Security",
   arlo: "Arlo",
   simplisafe: "SimpliSafe",
@@ -141,6 +147,7 @@ export const brandLabels: Record<BrandId, string> = {
 };
 
 export const brandAccents: Record<Exclude<BrandId, "all">, string> = {
+  reolink: "#0b63b6",
   eufy: "#087d67",
   arlo: "#856b00",
   simplisafe: "#bd3f2b",

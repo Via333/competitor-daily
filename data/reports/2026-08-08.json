@@ -1,21 +1,21 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "date": "2026-08-08",
   "displayDate": "2026年8月8日",
   "dayNumber": 0,
   "market": "美国",
   "edition": "Day 0 基线",
-  "summary": "第一次正式拉取：先建立五家品牌当前正在做什么的可回看快照。从下一期起，新增、变化、结束与持续将按上一期严格对比。",
+  "summary": "第一次正式拉取：以 Reolink 自有品牌为基准，建立五家主要竞品当前正在做什么的可回看快照。从下一期起，新增、变化、结束与持续将按上一期严格对比。",
   "thesis": {
     "eyebrow": "TODAY'S THESIS",
-    "title": "AI 不再是共同卖点，而是五种不同的商业模式。",
-    "body": "真正值得持续监控的，不只是竞品又出了什么 Camera，而是它这个月越来越想让消费者为什么付钱。"
+    "title": "六个品牌正在把 AI 变成五条不同的商业路线。",
+    "body": "以 Reolink 为自有基准，持续比较本地 AI、云端订阅、真人干预、平台生态与商业安防如何争夺同一批用户。"
   },
   "metrics": [
-    { "value": "5", "label": "持续监控品牌" },
+    { "value": "6", "label": "自有品牌 + 主要竞品" },
     { "value": "1", "label": "本周高影响平台动作" },
     { "value": "3", "label": "持续观察信号" },
-    { "value": "18", "label": "营销 / 声誉事件" }
+    { "value": "23", "label": "营销 / 声誉事件" }
   ],
   "topSignals": [
     {
@@ -36,33 +36,117 @@
     },
     {
       "rank": 3,
+      "brand": "reolink",
+      "priority": "high",
+      "status": "近30天变化",
+      "title": "Video Doorbell 2nd Gen 把本地 AI 带到前门入口",
+      "judgment": "自有品牌继续用端侧识别、本地存储和无强制订阅对冲订阅墙。"
+    },
+    {
+      "rank": 4,
       "brand": "eufy",
       "priority": "high",
       "status": "持续",
       "title": "Local AI + NVR + 本地存储成为核心叙事",
-      "judgment": "与 Cloud AI + Subscription 形成清晰竞争轴。"
-    },
-    {
-      "rank": 4,
-      "brand": "google-nest",
-      "priority": "medium-high",
-      "status": "近30天变化",
-      "title": "Google Home 接入 eufy 等第三方摄像头",
-      "judgment": "平台从 Nest 硬件生态走向跨品牌控制层。"
+      "judgment": "与 Reolink 形成最直接的本地优先竞争轴。"
     },
     {
       "rank": 5,
-      "brand": "arlo",
+      "brand": "google-nest",
       "priority": "medium-high",
-      "status": "持续",
-      "title": "当前硬件阵容完整，AI 功能集中进 Secure",
-      "judgment": "硬件是入口，Arlo Intelligence 才是商业核心。"
+      "status": "近30天变化",
+      "title": "Google Home 接入 Reolink 等第三方摄像头",
+      "judgment": "平台从 Nest 硬件生态走向跨品牌控制层。"
     }
   ],
   "marketingRadar": {
-    "headline": "渠道扩张与 AI 变现同时加速，隐私和产品体验也进入传播风险区。",
-    "summary": "本期基线回看近 90 天的高价值信号：正式发布、合作和渠道动作按事实记录；诉讼只写原告诉称，社区投诉只作为待验证舆情，不把讨论热度误报为系统性事故。",
+    "headline": "Reolink 以新品和 UGC 强化本地优先路线，竞品则继续扩渠道、订阅与平台边界。",
+    "summary": "本期基线回看近 90 天的高价值信号，并对自有品牌与竞品使用同一套证据标准：正式发布、合作和渠道动作按事实记录；CVE 记录修复边界，诉讼只写原告诉称，社区投诉只作为待验证舆情。",
     "events": [
+      {
+        "id": "reolink-day-ugc-2026",
+        "brand": "reolink",
+        "date": "2026-07-15—08-18",
+        "type": "Campaign",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "medium",
+        "title": "Reolink Day 从促销日升级为月度 UGC 内容 IP",
+        "summary": "首轮 Capture Sharing 于 7 月 15 日至 8 月 9 日征集宠物、趣味、野生动物与安全故事；同期 Giveaway 持续至 8 月 18 日。",
+        "whyItMatters": "品牌正从单次折扣向可重复的社区内容机制迁移，有机会持续沉淀真实使用素材与用户证言。",
+        "sources": [
+          { "label": "Reolink Day 官方页", "url": "https://reolink.com/us/lp/reolink-day/" },
+          { "label": "Capture Sharing 规则", "url": "https://reolink.com/us/reolink-capture-sharing-term/" }
+        ]
+      },
+      {
+        "id": "reolink-doorbell-2-launch-2026",
+        "brand": "reolink",
+        "date": "2026-07-20",
+        "type": "PR / 合作",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "high",
+        "title": "Video Doorbell 2nd Gen 上市，继续强化本地 AI 与无订阅",
+        "summary": "新品在 Reolink.com 与官方 Amazon 店开售，提供 4MP 1:1 画幅、最长约 10 个月电池、端侧识别、最高 512GB microSD 与可选接线 24/7 录像。",
+        "whyItMatters": "自有品牌正以功能不被订阅墙锁住作为前门入口的核心转化理由，并借 Qualcomm 低功耗能力增强传播。",
+        "sources": [
+          { "label": "Reolink 官方发布", "url": "https://reolink.com/blog/reolink-releases-the-video-doorbell-2nd-gen/" },
+          { "label": "Video Doorbell 2nd Gen", "url": "https://reolink.com/us/product/reolink-video-doorbell-2nd-gen/" }
+        ]
+      },
+      {
+        "id": "reolink-omvi-qualcomm-launch-2026",
+        "brand": "reolink",
+        "date": "2026-06-01",
+        "type": "PR / 合作",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "high",
+        "title": "OMVI 三镜头与 Qualcomm 低功耗系列同步发布",
+        "summary": "OMVI 3i 以 18MP 三镜头、全景加 PT 跟踪、SyncTrack 与 ReoNeura 本地 AI 搜索切入全域监控；低功耗系列则扩大无线入门场景。",
+        "whyItMatters": "一次发布同时向更专业的高端覆盖能力和更低功耗的大众入口扩张。OMVI X16 仍在预热，不能写成已经开售。",
+        "sources": [
+          { "label": "Reolink 官方发布", "url": "https://reolink.com/blog/reolink-introduces-triple-lens-omvi-series-and-reolink-x-qualcomm-power-efficient-series-cameras/" },
+          { "label": "OMVI 系列官方页", "url": "https://reolink.com/us/lp/reolink-omvi-series/" }
+        ]
+      },
+      {
+        "id": "reolink-prime-day-2026",
+        "brand": "reolink",
+        "date": "2026-06-16—06-26",
+        "type": "渠道事件",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "medium",
+        "title": "Prime Day 拉长为两周，Amazon 与官网同步促销",
+        "summary": "活动于 6 月 16 日提前启动，6 月 23 至 26 日最高 48% off，覆盖 OMVI 3i、Duo 3、TrackFlex、门铃与 NVR 套装。",
+        "whyItMatters": "美国获客仍高度依赖节点促销和 Amazon / DTC 双渠道；后续更应监控折扣深度与非促销价差。",
+        "sources": [
+          { "label": "Reolink Prime Day 官方发布", "url": "https://reolink.com/blog/reolink-prime-day-deals-starting/" }
+        ]
+      },
+      {
+        "id": "reolink-home-hub-cve-2026",
+        "brand": "reolink",
+        "date": "2026-06-26",
+        "type": "风险 / 舆情",
+        "verification": "已确认",
+        "evidence": "第三方监测",
+        "confidence": "高",
+        "impact": "medium",
+        "title": "Home Hub 本地凭据弱点获 CVE 编号，旧固件需要升级",
+        "summary": "CVE-2026-57473 为中危，影响低于 v3.3.0.456_26031911 的 Home Hub；攻击需要相邻网络等条件，公开资料未显示已被利用。",
+        "whyItMatters": "这不是大规模入侵或数据泄露，但直接触及本地与隐私优先的核心承诺，应继续监控升级覆盖与对外说明。",
+        "sources": [
+          { "label": "NVD CVE-2026-57473", "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57473" },
+          { "label": "Nozomi Networks 公告", "url": "https://www.nozominetworks.com/labs/vulnerability-advisories-cve-2026-57473" }
+        ]
+      },
       {
         "id": "ring-commercial-channel-launch",
         "brand": "ring",
@@ -293,6 +377,7 @@
       {
         "id": "google-home-third-party-cameras",
         "brand": "google-nest",
+        "relatedBrands": ["reolink", "eufy"],
         "date": "2026-08-05",
         "type": "PR / 合作",
         "verification": "已确认",
@@ -361,7 +446,88 @@
   },
   "brands": [
     {
+      "id": "reolink",
+      "role": "owned",
+      "name": "Reolink",
+      "monogram": "RL",
+      "accent": "#0b63b6",
+      "route": "Local AI + Flexible Local Storage + No Mandatory Subscription",
+      "heroProduct": "Video Doorbell 2nd Gen / OMVI 3i / TrackFlex Floodlight WiFi",
+      "heroMessage": "Your Footage. Your Storage. Your Rules.",
+      "mainOffer": "本地 AI 与本地录像无需强制月费",
+      "aiProposition": "ReoNeura Local AI Search + Smart Detection",
+      "subscriptionProposition": "本地核心能力免月费；Cloud 为可选增值",
+      "mainChannel": "DTC + Amazon + Retail bundles",
+      "snapshot": [
+        {
+          "id": "reolink-doorbell-2nd-gen",
+          "status": "近30天变化",
+          "category": "产品 / 前门入口",
+          "firstObserved": "2026-07-20",
+          "importance": 5,
+          "title": "Video Doorbell 2nd Gen 在美国正式开售",
+          "summary": "4MP 1:1 head-to-toe、最长约 10 个月电池、端侧人车动物访客与包裹识别，并支持最高 512GB microSD。",
+          "detail": "新品于 Reolink.com 与官方 Amazon 店开售，标价 $149.99；还可接入既有门铃线实现 24/7 录像。最长续航基于官方每天使用 5 分钟的测试口径。",
+          "analysis": "这是自有品牌近 30 天最明确的新品动作：用本地 AI、灵活供电和无强制订阅正面对标 Ring 等前门入口。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "Reolink 官方发布", "url": "https://reolink.com/blog/reolink-releases-the-video-doorbell-2nd-gen/" },
+            { "label": "Video Doorbell 2nd Gen", "url": "https://reolink.com/us/product/reolink-video-doorbell-2nd-gen/" }
+          ]
+        },
+        {
+          "id": "reolink-omvi-reoneura",
+          "status": "持续",
+          "category": "产品 / 本地 AI",
+          "firstObserved": "2026-08-08",
+          "importance": 5,
+          "title": "OMVI 3i 与 ReoNeura 把品牌从高性价比硬件推向本地 AI 平台",
+          "summary": "在售 OMVI 3i 以 18MP 三镜头、全景加 PT 跟踪、SyncTrack 与本地 AI Video Search 提供 360° 覆盖。",
+          "detail": "ReoNeura 的兼容机型可在本地完成搜索与智能检测，无需强制订阅。24MP OMVI X16 PoE 仍处于 Coming Soon 阶段，官方预计 9 月下旬发布，不作为已上市产品统计。",
+          "analysis": "与 eufy 的竞争将从本地存储继续上移到本地 AI 搜索、跨镜跟踪、专业级覆盖和可扩展计算。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "OMVI 3i 官方发布", "url": "https://reolink.com/blog/reolink-introduces-triple-lens-omvi-series-and-reolink-x-qualcomm-power-efficient-series-cameras/" },
+            { "label": "OMVI 系列官方页", "url": "https://reolink.com/us/lp/reolink-omvi-series/" },
+            { "label": "ReoNeura 官方页", "url": "https://reolink.com/us/lp/reoneura/" }
+          ]
+        },
+        {
+          "id": "reolink-google-home-access",
+          "status": "变化",
+          "category": "生态 / 平台接入",
+          "firstObserved": "2026-08-05",
+          "importance": 4,
+          "title": "Google Home 扩展第三方摄像头时纳入 Reolink",
+          "summary": "Google 官方确认 Reolink 摄像头可新增接入并在 Google Home 查看画面。",
+          "detail": "同批支持还包括 eufy、Tapo、Wyze 与 Nanit。当前证据只支持接入与看画面，不能延伸写成 Reolink 画面已获得完整 Gemini AI 或 Google 录像能力。",
+          "analysis": "这为自有品牌增加了一个跨平台控制入口，也让“本地优先”与主流智能家居生态不再完全对立。",
+          "timeframes": ["daily", "seven", "thirty", "archive"],
+          "sources": [
+            { "label": "Google Home 发布说明", "url": "https://support.google.com/googlehome/answer/15962877?hl=en" }
+          ]
+        },
+        {
+          "id": "reolink-home-hub-local-storage",
+          "status": "持续",
+          "category": "存储 / Hub",
+          "firstObserved": "2026-08-08",
+          "importance": 4,
+          "title": "Home Hub Pro 把本地存储做成系统级价值",
+          "summary": "内置 2TB HDD、可扩至 16TB、最多管理 24 台摄像头，并提供加密本地录像与局域网访问。",
+          "detail": "Reolink Cloud 仍是部分机型和地区可选的增值服务，但 Home Hub 与 NVR 路线让 24/7 录像、回放和基础 AI 不依赖强制云订阅。",
+          "analysis": "自有品牌应持续跟踪本地体验稳定性、跨设备搜索与安全升级透明度，因为它们共同决定“本地优先”承诺的可信度。",
+          "timeframes": ["daily", "thirty", "archive"],
+          "sources": [
+            { "label": "Home Hub Pro 官方页", "url": "https://reolink.com/us/product/reolink-home-hub-pro/" },
+            { "label": "Reolink Cloud 官方说明", "url": "https://support.reolink.com/hc/en-us/articles/900000641926-Introduction-to-Reolink-Cloud/" }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ring",
+      "role": "competitor",
       "name": "Ring",
       "monogram": "R",
       "accent": "#176eaa",
@@ -425,6 +591,7 @@
     },
     {
       "id": "simplisafe",
+      "role": "competitor",
       "name": "SimpliSafe",
       "monogram": "S",
       "accent": "#bd3f2b",
@@ -472,6 +639,7 @@
     },
     {
       "id": "eufy",
+      "role": "competitor",
       "name": "eufy Security",
       "monogram": "E",
       "accent": "#087d67",
@@ -533,6 +701,7 @@
     },
     {
       "id": "arlo",
+      "role": "competitor",
       "name": "Arlo",
       "monogram": "A",
       "accent": "#856b00",
@@ -580,6 +749,7 @@
     },
     {
       "id": "google-nest",
+      "role": "competitor",
       "name": "Google Nest",
       "monogram": "G",
       "accent": "#6852a8",
@@ -628,16 +798,25 @@
   ],
   "sevenDay": {
     "range": "2026-08-02 — 2026-08-08",
-    "headline": "没有大型新品或新 Campaign；Google Home 的跨品牌接入是唯一高影响平台动作。",
-    "summary": "8 月 5 日，Google Home 新增 eufy、Tapo、Wyze、Reolink 与 Nanit 摄像头接入。除此之外，本周保留两条需要继续复核的社区弱信号。",
+    "headline": "没有大型新品；Google Home 跨品牌接入落地，Reolink Day 继续积累 UGC。",
+    "summary": "8 月 5 日，Google Home 新增 Reolink、eufy、Tapo、Wyze 与 Nanit 摄像头接入；自有品牌的 Capture Sharing 首轮接近 8 月 9 日截止。除此之外，本周保留两条需要继续复核的社区弱信号。",
     "events": [
       {
         "date": "08.05",
         "brand": "google-nest",
+        "relatedBrands": ["reolink", "eufy"],
         "status": "变化",
         "type": "PR / 合作",
         "title": "Google Home 开放更多第三方摄像头接入",
         "note": "已确认可在 Google Home 查看画面；不延伸推断为第三方摄像头已获得完整 Gemini AI 或 Google 录像。"
+      },
+      {
+        "date": "本周持续",
+        "brand": "reolink",
+        "status": "持续",
+        "type": "Campaign",
+        "title": "Reolink Day 首轮 Capture Sharing 接近收官",
+        "note": "月度 UGC 活动首轮于 8 月 9 日截止，Giveaway 持续至 8 月 18 日；后续应观察投稿和互动质量。"
       },
       {
         "date": "08.01—08.05",
@@ -659,11 +838,12 @@
   },
   "thirtyDay": {
     "range": "2026-07-08 — 2026-08-08",
-    "headline": "五家都在讲 AI，但付费理由已经分叉。",
-    "summary": "本月最明确的新动作来自 Ring 的商业安防扩张、SimpliSafe 的 Walmart 渠道扩张，以及 Google Home 的跨品牌摄像头接入；Arlo 和 eufy 以持续中的核心商业路线为主。",
-    "marketingHeadline": "增长动作在变重，声誉风险也从产品抱怨上升到隐私、可靠性与透明度。",
-    "marketingSummary": "Ring、SimpliSafe 与 Google 分别用商业渠道、大众零售和跨品牌平台扩大漏斗；Arlo 通过硬件套装绑定订阅，eufy 用本地 AI 与直营促销强化差异化。与此同时，人脸识别诉讼、服务中断、社区关闭和 App / 固件讨论需要按不同证据等级持续跟踪。",
+    "headline": "六个品牌都在讲 AI，但付费与存储路线已经分叉。",
+    "summary": "Reolink 用 Doorbell 2nd Gen 强化本地 AI 与无强制订阅；Ring、SimpliSafe 和 Google 分别扩张商业安防、大众零售与跨品牌平台；Arlo 与 eufy 延续各自的订阅和本地路线。",
+    "marketingHeadline": "自有品牌把本地优先贯穿新品、内容与渠道，风险管理必须同步跟上。",
+    "marketingSummary": "Reolink 用 Doorbell 2nd Gen 与 Reolink Day 同时推进产品入口和 UGC 资产；竞品则继续扩大渠道、订阅与平台边界。Home Hub 中危 CVE、Ring 人脸识别诉讼、服务中断和社区透明度等风险，均按相同证据等级记录。",
     "routes": [
+      { "brand": "reolink", "label": "Local-first breadth", "detail": "本地 AI / 多形态硬件 / 无强制订阅" },
       { "brand": "eufy", "label": "Local AI", "detail": "本地存储 / 无云依赖" },
       { "brand": "arlo", "label": "AI SaaS", "detail": "硬件入口 / Secure 变现" },
       { "brand": "ring", "label": "Platform", "detail": "社区 / 服务 / 商业安防" },
@@ -673,6 +853,7 @@
   },
   "methodology": [
     "优先记录官网、产品、价格、订阅、渠道与 Campaign 的可验证变化。",
+    "Reolink 作为自有品牌与竞品采用同一证据、重要性与风险标注口径，自有材料仍标记为品牌方来源。",
     "社区讨论仅作为弱信号，不直接升级为品牌事实。",
     "营销与声誉事件按官方、权威媒体、第三方监测、社区信号四档标记；诉讼与投诉均保留事实边界。",
     "Day 0 用于建立基线；从下一期起按上一期严格标记新增、变化、结束与持续。",

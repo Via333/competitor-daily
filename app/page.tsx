@@ -32,6 +32,10 @@ function brandStyle(id: Exclude<BrandId, "all">) {
   return { "--brand": brandAccents[id] } as CSSProperties;
 }
 
+function OwnBrandBadge({ compact = false }: { compact?: boolean }) {
+  return <span className={compact ? "own-brand-badge own-brand-badge--compact" : "own-brand-badge"}>自有品牌</span>;
+}
+
 function statusClass(status: SignalStatus) {
   if (status === "弱信号") return "status status--weak";
   if (status === "持续") return "status status--steady";
@@ -73,6 +77,7 @@ function SignalCard({ signal, report }: { signal: Report["topSignals"][number]; 
       <div className="signal-brand">
         <span className="brand-dot" />
         {brand.name}
+        {brand.role === "owned" && <OwnBrandBadge compact />}
       </div>
       <h3>{signal.title}</h3>
       <p>{signal.judgment}</p>
@@ -141,12 +146,12 @@ function BrandCard({
   ];
 
   return (
-    <section className="brand-card" style={brandStyle(brand.id)} id={brand.id}>
+    <section className={brand.role === "owned" ? "brand-card brand-card--owned" : "brand-card"} style={brandStyle(brand.id)} id={brand.id}>
       <header className="brand-card__header">
         <div className="brand-identity">
           <span className="brand-monogram" aria-hidden="true">{brand.monogram}</span>
           <div>
-            <p className="brand-kicker">CURRENT ROUTE</p>
+            <p className="brand-kicker">{brand.role === "owned" ? "OWN BRAND / CURRENT ROUTE" : "CURRENT ROUTE"}</p>
             <h3>{brand.name}</h3>
           </div>
         </div>
@@ -185,7 +190,9 @@ function MarketingRadar({ report, brand }: { report: Report; brand: BrandId }) {
     { id: "渠道事件", label: "渠道事件" },
     { id: "风险 / 舆情", label: "风险 / 舆情" },
   ];
-  const brandEvents = radar.events.filter((event) => brand === "all" || event.brand === brand);
+  const brandEvents = radar.events.filter(
+    (event) => brand === "all" || event.brand === brand || event.relatedBrands?.includes(brand),
+  );
   const events = brandEvents
     .filter((event) => category === "all" || event.type === category)
     .sort((a, b) => b.date.localeCompare(a.date));
@@ -247,7 +254,9 @@ function MarketingRadar({ report, brand }: { report: Report; brand: BrandId }) {
               <div className="event-card__identity">
                 <span className="brand-dot" />
                 <strong>{brandLabels[event.brand]}</strong>
-                <span>{event.type}</span>
+                {report.brands.find((item) => item.id === event.brand)?.role === "owned" && <OwnBrandBadge compact />}
+                {brand !== "all" && event.brand !== brand && <span className="event-related">关联 {brandLabels[brand]}</span>}
+                <span className="event-type">{event.type}</span>
               </div>
               <h3>{event.title}</h3>
               <p>{event.summary}</p>
@@ -301,11 +310,15 @@ function DailyView({
           aside="按战略重要性排序，不以新闻数量凑版面"
           headingId="signals-heading"
         />
-        <div className="signal-grid">
-          {signals.map((signal) => (
-            <SignalCard key={`${signal.brand}-${signal.rank}`} signal={signal} report={report} />
-          ))}
-        </div>
+        {signals.length > 0 ? (
+          <div className="signal-grid">
+            {signals.map((signal) => (
+              <SignalCard key={`${signal.brand}-${signal.rank}`} signal={signal} report={report} />
+            ))}
+          </div>
+        ) : (
+          <EmptyState label="这个品牌今天没有进入优先级最高的 5 个信号，完整动态仍保留在下方快照。" />
+        )}
       </section>
 
       <MarketingRadar report={report} brand={brand} />
@@ -328,7 +341,9 @@ function DailyView({
 }
 
 function SevenDayView({ report, brand }: { report: Report; brand: BrandId }) {
-  const events = report.sevenDay.events.filter((event) => brand === "all" || event.brand === brand);
+  const events = report.sevenDay.events.filter(
+    (event) => brand === "all" || event.brand === brand || event.relatedBrands?.includes(brand),
+  );
 
   return (
     <section className="content-section range-view">
@@ -349,6 +364,8 @@ function SevenDayView({ report, brand }: { report: Report; brand: BrandId }) {
               <div className="timeline-copy">
                 <div>
                   <span className="timeline-brand">{brandLabels[event.brand]}</span>
+                  {report.brands.find((item) => item.id === event.brand)?.role === "owned" && <OwnBrandBadge compact />}
+                  {brand !== "all" && event.brand !== brand && <span className="timeline-type">关联 {brandLabels[brand]}</span>}
                   {event.type && <span className="timeline-type">{event.type}</span>}
                   <span className={statusClass(event.status)}>{event.status}</span>
                 </div>
@@ -380,7 +397,7 @@ function ThirtyDayView({
   return (
     <>
       <section className="content-section range-view">
-        <SectionHeading eyebrow="30-DAY TREND" title="竞品战略迁移雷达" aside={report.thirtyDay.range} />
+        <SectionHeading eyebrow="30-DAY TREND" title="品牌战略路线图" aside={report.thirtyDay.range} />
         <div className="range-hero range-hero--trend">
           <span className="range-index">30</span>
           <div>
@@ -398,9 +415,9 @@ function ThirtyDayView({
           </aside>
         )}
         <div className="route-map">
-          {routes.map((route, index) => (
+          {routes.map((route) => (
             <article key={route.brand} style={brandStyle(route.brand)}>
-              <span className="route-number">0{index + 1}</span>
+              <span className="route-number">{report.brands.find((item) => item.id === route.brand)?.role === "owned" ? "OWN" : "PEER"}</span>
               <div className="route-line"><span /></div>
               <p>{brandLabels[route.brand]}</p>
               <h3>{route.label}</h3>
@@ -504,6 +521,11 @@ export default function Home() {
 
   if (!report) return <EmptyState label="暂时还没有报告数据。" />;
 
+  const activeBrand = brand === "all" || report.brands.some((item) => item.id === brand) ? brand : "all";
+  const availableBrandOrder = brandOrder.filter(
+    (id) => id === "all" || report.brands.some((item) => item.id === id),
+  );
+
   function selectArchive(date: string) {
     setSelectedDate(date);
     setView("daily");
@@ -530,7 +552,7 @@ export default function Home() {
           <div className="hero-copy">
             <p className="hero-eyebrow">UNITED STATES · HOME SECURITY INTELLIGENCE</p>
             <h1>美国安防<br /><em>竞品雷达</em></h1>
-            <p className="hero-deck">eufy Security、Arlo、SimpliSafe、Ring 与 Google Nest 的产品、AI、订阅、渠道、Campaign 与声誉风险，放在同一张战略地图上。</p>
+            <p className="hero-deck">以 Reolink（自有品牌）为基准，对比 eufy Security、Arlo、SimpliSafe、Ring 与 Google Nest 的产品、AI、订阅、渠道、Campaign 与声誉风险。</p>
             <div className="hero-edition">
               <span>{report.edition}</span>
               <p>{report.displayDate} · {report.market}市场</p>
@@ -587,18 +609,22 @@ export default function Home() {
           <div className="filter-group">
             <span className="filter-label">BRAND</span>
             <div className="filter-scroll">
-              {brandOrder.map((id) => (
+              {availableBrandOrder.map((id) => {
+                const brandDetail = id === "all" ? undefined : report.brands.find((item) => item.id === id);
+                return (
                 <button
                   type="button"
                   key={id}
-                  className={brand === id ? "filter-chip filter-chip--active" : "filter-chip"}
-                  aria-pressed={brand === id}
+                  className={activeBrand === id ? "filter-chip filter-chip--active" : "filter-chip"}
+                  aria-pressed={activeBrand === id}
                   onClick={() => setBrand(id)}
                 >
                   {id !== "all" && <i style={{ background: brandAccents[id] }} />}
                   {brandLabels[id]}
+                  {brandDetail?.role === "owned" && <OwnBrandBadge compact />}
                 </button>
-              ))}
+                );
+              })}
             </div>
           </div>
           {(view === "daily" || view === "thirty") && (
@@ -621,9 +647,9 @@ export default function Home() {
           )}
         </section>
 
-        {view === "daily" && <DailyView report={report} brand={brand} status={status} />}
-        {view === "seven" && <SevenDayView report={report} brand={brand} />}
-        {view === "thirty" && <ThirtyDayView report={report} brand={brand} status={status} />}
+        {view === "daily" && <DailyView report={report} brand={activeBrand} status={status} />}
+        {view === "seven" && <SevenDayView report={report} brand={activeBrand} />}
+        {view === "thirty" && <ThirtyDayView report={report} brand={activeBrand} status={status} />}
         {view === "archive" && <ArchiveView selectedDate={selectedDate} onSelect={selectArchive} />}
 
         <Methodology report={report} />
