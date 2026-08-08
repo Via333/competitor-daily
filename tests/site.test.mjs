@@ -31,6 +31,22 @@ test("keeps the baseline report structurally complete", async () => {
   assert.ok(sources.every((source) => source.url.startsWith("https://")));
 });
 
+test("tracks marketing, PR, channel, and reputation events with evidence labels", async () => {
+  const source = await readFile(new URL("data/reports/2026-08-08.json", root), "utf8");
+  const report = JSON.parse(source);
+  const radar = report.marketingRadar;
+  const expectedTypes = ["Campaign", "PR / 合作", "渠道事件", "风险 / 舆情"];
+  const expectedEvidence = ["官方 / 品牌方", "权威媒体", "社区信号"];
+
+  assert.ok(radar);
+  assert.ok(radar.events.length >= 15);
+  assert.deepEqual([...new Set(radar.events.map((event) => event.type))].sort(), expectedTypes.sort());
+  assert.ok(expectedEvidence.every((label) => radar.events.some((event) => event.evidence === label)));
+  assert.ok(radar.events.every((event) => event.sources.length > 0));
+  assert.ok(radar.events.flatMap((event) => event.sources).every((item) => item.url.startsWith("https://")));
+  assert.ok(radar.events.some((event) => event.verification === "持续观察"));
+});
+
 test("preserves the corrected launch-date language", async () => {
   const source = await readFile(new URL("data/reports/2026-08-08.json", root), "utf8");
   const report = JSON.parse(source);

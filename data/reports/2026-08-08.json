@@ -13,9 +13,9 @@
   },
   "metrics": [
     { "value": "5", "label": "持续监控品牌" },
-    { "value": "2", "label": "近 30 天确定动作" },
-    { "value": "2", "label": "本周弱信号" },
-    { "value": "0", "label": "本周重大新品 / Campaign" }
+    { "value": "1", "label": "本周高影响平台动作" },
+    { "value": "3", "label": "持续观察信号" },
+    { "value": "18", "label": "营销 / 声誉事件" }
   ],
   "topSignals": [
     {
@@ -46,9 +46,9 @@
       "rank": 4,
       "brand": "google-nest",
       "priority": "medium-high",
-      "status": "持续",
-      "title": "Gemini 深入摄像头与 Home Premium",
-      "judgment": "AI 正在成为整套智能家居订阅的升级理由。"
+      "status": "近30天变化",
+      "title": "Google Home 接入 eufy 等第三方摄像头",
+      "judgment": "平台从 Nest 硬件生态走向跨品牌控制层。"
     },
     {
       "rank": 5,
@@ -59,12 +59,312 @@
       "judgment": "硬件是入口，Arlo Intelligence 才是商业核心。"
     }
   ],
+  "marketingRadar": {
+    "headline": "渠道扩张与 AI 变现同时加速，隐私和产品体验也进入传播风险区。",
+    "summary": "本期基线回看近 90 天的高价值信号：正式发布、合作和渠道动作按事实记录；诉讼只写原告诉称，社区投诉只作为待验证舆情，不把讨论热度误报为系统性事故。",
+    "events": [
+      {
+        "id": "ring-commercial-channel-launch",
+        "brand": "ring",
+        "date": "2026-07-08",
+        "type": "渠道事件",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "high",
+        "title": "商业安防新品同步进入 Home Depot 与租赁渠道",
+        "summary": "Mobile Security Tower 与 Elite 360 4K 开售；Tower 面向工地、停车场和活动场地，并进入 Home Depot 展示，United Rentals 计划在部分地区提供租赁。",
+        "whyItMatters": "这不只是新品上架，而是 Ring 用零售、直营和设备租赁同时打开商业场地安防市场。",
+        "sources": [
+          { "label": "Ring 官方发布", "url": "https://blog.ring.com/about-ring/ring-mobile-security-tower-is-here/" }
+        ]
+      },
+      {
+        "id": "ring-iloq-partnership",
+        "brand": "ring",
+        "date": "2026-07-15",
+        "type": "PR / 合作",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "high",
+        "title": "Ring 与 iLOQ 把视频监控和访问管理合进同一平台",
+        "summary": "iLOQ 成为 Ring preferred partner，5 Series+ 访问管理将集成 Mobile Security Tower 与 Ring App。",
+        "whyItMatters": "商业故事从“摄像头看见现场”延伸到“谁能进入现场”，平台边界继续外扩。",
+        "sources": [
+          { "label": "iLOQ 新闻稿", "url": "https://www.prnewswire.com/news-releases/iloq-powers-smart-access-in-rings-mobile-security-tower-302826159.html" }
+        ]
+      },
+      {
+        "id": "ring-familiar-faces-lawsuit",
+        "brand": "ring",
+        "date": "2026-06-02",
+        "type": "风险 / 舆情",
+        "verification": "已确认",
+        "evidence": "权威媒体",
+        "confidence": "高",
+        "impact": "high",
+        "title": "Familiar Faces 面临生物识别隐私集体诉讼",
+        "summary": "原告诉称 Ring 的可选人脸识别功能在未经路人同意时收集并保留面部图像；案件仍在诉讼阶段，尚非裁判结论。",
+        "whyItMatters": "争议正好落在 Ring 用人脸 AI 推动高阶订阅的核心卖点上，可能收窄其传播空间。",
+        "sources": [
+          { "label": "Reuters 报道", "url": "https://www.investing.com/news/stock-market-news/amazons-ring-sued-over-facial-recognition-feature-latest-privacy-concern-for-doorbell-maker-4721528" }
+        ]
+      },
+      {
+        "id": "simplisafe-walmart-rollout",
+        "brand": "simplisafe",
+        "date": "2026-07-08",
+        "type": "渠道事件",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "high",
+        "title": "SimpliSafe 大规模进入 Walmart 800+ 门店",
+        "summary": "品牌上线 Walmart.com 与全美 800 多家门店，并推出 $199.99 的 Walmart 独家 7 件套和一个月免费专业监控。",
+        "whyItMatters": "低价硬件承接大众零售流量，再把新客导向专业监控订阅，显著扩宽原有 DTC 漏斗。",
+        "sources": [
+          { "label": "SimpliSafe 新闻稿", "url": "https://www.prnewswire.com/news-releases/simplisafe-expands-retail-presence-at-walmart-making-award-winning-home-security-even-more-accessible-302819953.html" }
+        ]
+      },
+      {
+        "id": "simplisafe-referral-promotion",
+        "brand": "simplisafe",
+        "date": "2026-06-24",
+        "type": "Campaign",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "medium",
+        "title": "推荐计划用双边高补贴加速拉新",
+        "summary": "新客户可获 50% off 与免费 Video Doorbell Pro，推荐人可获 $200 Visa 礼卡。",
+        "whyItMatters": "这是高补贴获客机制；后续优惠力度和持续时间可反映品牌对增长与回本周期的取舍。",
+        "sources": [
+          { "label": "SimpliSafe 官方说明", "url": "https://support.simplisafe.com/articles/orders-warranty/simplisafe-referral-program" }
+        ]
+      },
+      {
+        "id": "simplisafe-community-closure",
+        "brand": "simplisafe",
+        "date": "2026-06-30",
+        "type": "风险 / 舆情",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "medium",
+        "title": "官方 Community 与 SimpliTracker 关闭",
+        "summary": "社区历史帖子和产品需求不再公开，用户互动被引导至 Help Center、Reddit 与社交媒体。",
+        "whyItMatters": "这不是安全事故，但会减少公开问题的可追溯沉淀，形成客户关系与透明度风险。",
+        "sources": [
+          { "label": "SimpliSafe 官方公告", "url": "https://simplisafe.com/blog/community-forum-changes" }
+        ]
+      },
+      {
+        "id": "eufy-edgeagent-launch",
+        "brand": "eufy",
+        "date": "2026-05-21",
+        "type": "PR / 合作",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "high",
+        "title": "EdgeAgent 把“本地 AI、主动防护、免月费”推成战略发布",
+        "summary": "eufy 公布本地运行的 detection–analysis–action 三阶段 AI，计划于 2026 年下半年推出并兼容多种硬件。",
+        "whyItMatters": "它把 eufy 与 Ring、Arlo 的云端 AI 订阅叙事明确拉开，是今年最重要的品牌差异化主张之一。",
+        "sources": [
+          { "label": "Anker Innovations 官方发布", "url": "https://www.anker-in.com/posts/anker-day-2026" }
+        ]
+      },
+      {
+        "id": "eufy-prime-day-dtc",
+        "brand": "eufy",
+        "date": "2026-06-16—06-30",
+        "type": "Campaign",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "medium",
+        "title": "把 Prime Day 拉长为两周直营活动",
+        "summary": "官方 DTC 促销分 Warm-up、Peak 与 Encore 三阶段，叠加安全产品折扣、礼卡、会员优惠和满额返现。",
+        "whyItMatters": "品牌借 Amazon 流量节点强化直营成交、会员与复购，而不是只在平台内打价格战。",
+        "sources": [
+          { "label": "eufy 美国官方活动", "url": "https://us.eufy.com/blogs/eufy-guides/eufy-prime-day-deals-2026-top-security-cleaning-and-baby-offers" }
+        ]
+      },
+      {
+        "id": "eufy-app-banner-reaction",
+        "brand": "eufy",
+        "date": "2026-07-06—08-08",
+        "type": "风险 / 舆情",
+        "verification": "持续观察",
+        "evidence": "社区信号",
+        "confidence": "中",
+        "impact": "medium",
+        "title": "安防 App 内促销 Banner 再次引发用户反感",
+        "summary": "多个社区帖子抱怨监控入口被促销信息占据，部分用户称需要联系支持才能移除；尚无官方事故或规模确认。",
+        "whyItMatters": "在高敏感度的安防界面交叉销售，容易把“无订阅”优势反转为对商业化干扰的质疑。",
+        "sources": [
+          { "label": "7 月社区讨论", "url": "https://www.reddit.com/r/EufyCam/comments/1unoy1s/keep_your_banners_outta_my_feed_eufy/" },
+          { "label": "8 月延续讨论", "url": "https://www.reddit.com/r/eufy/comments/1vfn4u5/has_anyone_figured_out_how_to_turn_off_this_great/" }
+        ]
+      },
+      {
+        "id": "eufy-homebase-s1-firmware-watch",
+        "brand": "eufy",
+        "date": "2026-07-28—08-08",
+        "type": "风险 / 舆情",
+        "verification": "持续观察",
+        "evidence": "社区信号",
+        "confidence": "低",
+        "impact": "medium",
+        "title": "HomeBase Professional S1 固件后的可靠性投诉形成小规模簇",
+        "summary": "讨论涉及摄像头无法重新接入、停止检测或排障时丢失录像；也有用户表示系统正常，官方未发布事故公告。",
+        "whyItMatters": "本地 AI 与本地存储依赖稳定性建立信任，同类问题若持续出现会直接侵蚀核心品牌承诺。",
+        "sources": [
+          { "label": "社区讨论", "url": "https://www.reddit.com/r/EufyCam/comments/1v8lw2g/anyone_elses_eufy_system_fall_apart_after_the/" }
+        ]
+      },
+      {
+        "id": "arlo-home-helpers-wellness",
+        "brand": "arlo",
+        "date": "2026-06-30",
+        "type": "PR / 合作",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "high",
+        "title": "Arlo × Home Helpers 把安防订阅延伸到老年照护",
+        "summary": "Aloe Care AI wellness service 将进入 Home Helpers 的 Direct Link，覆盖其服务的 1,500 多个美国社区。",
+        "whyItMatters": "Arlo 正从家庭安防扩到 aging-in-place 与健康监测的 B2B2C 订阅场景。",
+        "sources": [
+          { "label": "Arlo 官方发布", "url": "https://investor.arlo.com/press-releases/press-release-details/2026/Arlo-to-Deploy-New-Aloe-Care-AI-Powered-Wellness-Service-with-Home-Helpers-Home-Care/default.aspx" }
+        ]
+      },
+      {
+        "id": "arlo-prime-day-subscription-bundle",
+        "brand": "arlo",
+        "date": "2026-06-23—06-26",
+        "type": "Campaign",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "medium",
+        "title": "Prime Day 用深折扣硬件套装绑定一年服务计划",
+        "summary": "Pro 6 与 Ultra 3 三机套装和一年服务计划共同促销，官网 Bundle Builder 也用订阅礼卡推动 20% off。",
+        "whyItMatters": "大促目标从卖单台 Camera 转向提高 Secure attach rate，并把信息中心迁到整套保护方案。",
+        "sources": [
+          { "label": "Arlo 官方活动", "url": "https://blog.arlo.com/best-security-setups/amazon-prime-day-2026-arlo-security-camera-deals-bundles-more/" },
+          { "label": "Amazon 活动日期", "url": "https://press.aboutamazon.com/2026/6/mark-your-calendars-amazon-announces-prime-day-event-from-june-2326-with-millions-of-exclusive-deals-for-prime-members" }
+        ]
+      },
+      {
+        "id": "arlo-factory-reset-incident",
+        "brand": "arlo",
+        "date": "2026-05-15",
+        "type": "风险 / 舆情",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "high",
+        "title": "内部序列号错误让少量设备掉线并误触发恢复出厂",
+        "summary": "Arlo 表示事件没有未授权访问或安全风险，但受影响用户需要重新安装设备，原有设置也被清除；官方未披露具体数量。",
+        "whyItMatters": "即使范围有限，安防设备被远程重置仍会放大可靠性、恢复成本和账户控制的信任问题。",
+        "sources": [
+          { "label": "Arlo 官方说明", "url": "https://www.arlo.com/en_gb/support/faq/000000003/why-has-my-arlo-device-disappeared-from-my-account" }
+        ]
+      },
+      {
+        "id": "arlo-july-service-incident",
+        "brand": "arlo",
+        "date": "2026-07-24—07-26",
+        "type": "风险 / 舆情",
+        "verification": "持续观察",
+        "evidence": "社区信号",
+        "confidence": "中",
+        "impact": "medium",
+        "title": "录制、直播和登录故障后，状态页沟通出现缺口",
+        "summary": "Arlo 社区官方代表确认部分用户受到影响并称服务恢复，随后为故障期间状态页未及时更新致歉；范围与时长未正式披露。",
+        "whyItMatters": "安防服务中断本身之外，事故透明度会直接影响用户对云端订阅可靠性的判断。",
+        "sources": [
+          { "label": "社区事件记录", "url": "https://www.reddit.com/r/arlo/comments/1v59cyj/arlo_down/" },
+          { "label": "Arlo 状态归档", "url": "https://status.arlo.com/?start_date=2026-07-24" }
+        ]
+      },
+      {
+        "id": "google-home-third-party-cameras",
+        "brand": "google-nest",
+        "date": "2026-08-05",
+        "type": "PR / 合作",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "high",
+        "title": "Google Home 接入 eufy 等五家第三方摄像头",
+        "summary": "eufy、Tapo、Wyze、Reolink 与 Nanit 摄像头可接入 Google Home 并查看画面；官方没有声称第三方画面已获得完整 Gemini AI 或 Google 录像能力。",
+        "whyItMatters": "Google Home 正从 Nest 硬件生态转向跨品牌控制层，可能降低平台对自有摄像头的依赖。",
+        "sources": [
+          { "label": "Google Home 发布说明", "url": "https://support.google.com/googlehome/answer/15962877?hl=en" }
+        ]
+      },
+      {
+        "id": "google-walmart-onn-cameras",
+        "brand": "google-nest",
+        "date": "2026-07-23",
+        "type": "渠道事件",
+        "verification": "已确认",
+        "evidence": "官方 / 品牌方",
+        "confidence": "高",
+        "impact": "high",
+        "title": "Google × Walmart 用 onn 低价摄像头扩大 Home 入口",
+        "summary": "Google 正式宣布 onn Outdoor Camera Plug-In 与 Floodlight Camera 接入 Google Home；Premium 可解锁事件描述、Ask Home、Home Brief 和更长历史。",
+        "whyItMatters": "Walmart 自有低价硬件承担获客，Google Home 与付费 AI 承接价值，对主流品牌硬件价格带形成压力。",
+        "sources": [
+          { "label": "Google 官方公告", "url": "https://support.google.com/googlehome/thread/453918470/introducing-the-onn-outdoor-camera-plug-in-and-onn-outdoor-floodlight-camera-hardwired?hl=en" },
+          { "label": "Walmart Outdoor Camera", "url": "https://www.walmart.com/ip/ONN-OUTDOOR-CAM/18638953302" }
+        ]
+      },
+      {
+        "id": "google-assistant-privacy-settlement",
+        "brand": "google-nest",
+        "date": "2026-04-16—进行中",
+        "type": "风险 / 舆情",
+        "verification": "已确认",
+        "evidence": "权威媒体",
+        "confidence": "高",
+        "impact": "high",
+        "title": "Google Assistant 6,800 万美元隐私拟议和解仍待最终批准",
+        "summary": "案件涉及所谓“误唤醒”后的通信录音与人工审听，覆盖部分 Google Home 与 Nest 设备；Google 否认不当行为，最终批准听证定于 10 月 1 日。",
+        "whyItMatters": "Gemini for Home 扩大麦克风与摄像头 AI 使用时，历史隐私争议会重新进入消费者决策。",
+        "sources": [
+          { "label": "官方和解站点", "url": "https://www.googleassistantprivacysettlement.com/" },
+          { "label": "Reuters 转引报道", "url": "https://www.theguardian.com/technology/2026/jan/26/google-privacy-suit-settlement-voice-assistant" }
+        ]
+      },
+      {
+        "id": "google-nest-app-outage",
+        "brand": "google-nest",
+        "date": "2026-05-15",
+        "type": "风险 / 舆情",
+        "verification": "已确认",
+        "evidence": "权威媒体",
+        "confidence": "高",
+        "impact": "high",
+        "title": "Nest App 出现约 14 小时的大范围服务中断窗口",
+        "summary": "多家媒体记录用户从凌晨起无法使用，Google 下午确认问题并在傍晚恢复；早期状态页仍显示正常。",
+        "whyItMatters": "仍依赖旧 Nest App 的安防用户同时遭遇可用性和状态透明度问题。",
+        "sources": [
+          { "label": "9to5Google", "url": "https://9to5google.com/2026/05/15/googles-nest-app-is-down-for-many-in-widespread-outage/" },
+          { "label": "Engadget", "url": "https://www.engadget.com/2173741/the-nest-app-is-down-for-many-users/" }
+        ]
+      }
+    ]
+  },
   "brands": [
     {
       "id": "ring",
       "name": "Ring",
       "monogram": "R",
-      "accent": "#56b8ff",
+      "accent": "#176eaa",
       "route": "AI + Neighborhood + Services + Commercial Security",
       "heroProduct": "Elite 360 4K / Mobile Security Tower",
       "heroMessage": "从家庭门口走向整片物业",
@@ -127,7 +427,7 @@
       "id": "simplisafe",
       "name": "SimpliSafe",
       "monogram": "S",
-      "accent": "#ff6f57",
+      "accent": "#bd3f2b",
       "route": "Professional Monitoring + Human Intervention",
       "heroProduct": "Walmart Exclusive 7-piece System",
       "heroMessage": "Built for security. Not surveillance.",
@@ -174,7 +474,7 @@
       "id": "eufy",
       "name": "eufy Security",
       "monogram": "E",
-      "accent": "#55d9b3",
+      "accent": "#087d67",
       "route": "Local AI + 本地存储 + No Cloud Dependency",
       "heroProduct": "NVR Security System S4 Max / eufyCam S4",
       "heroMessage": "Local AI Agent，智能留在家里",
@@ -235,7 +535,7 @@
       "id": "arlo",
       "name": "Arlo",
       "monogram": "A",
-      "accent": "#e0cd63",
+      "accent": "#856b00",
       "route": "AI Camera + Subscription SaaS",
       "heroProduct": "Essential / Pro 6 / Ultra 3 lineup",
       "heroMessage": "AI-powered protection across the lineup",
@@ -282,7 +582,7 @@
       "id": "google-nest",
       "name": "Google Nest",
       "monogram": "G",
-      "accent": "#b69cff",
+      "accent": "#6852a8",
       "route": "Gemini + Whole Smart Home Ecosystem",
       "heroProduct": "Nest Cam / Doorbell 2K generation",
       "heroMessage": "2K clarity + Gemini smarts",
@@ -328,13 +628,22 @@
   ],
   "sevenDay": {
     "range": "2026-08-02 — 2026-08-08",
-    "headline": "本周无足够确定、足够重大的官方新品或大型新 Campaign。",
-    "summary": "没有重大变化也是结果。日报不为凑数量制造伪变化；本周只保留两个需要复核的社区弱信号。",
+    "headline": "没有大型新品或新 Campaign；Google Home 的跨品牌接入是唯一高影响平台动作。",
+    "summary": "8 月 5 日，Google Home 新增 eufy、Tapo、Wyze、Reolink 与 Nanit 摄像头接入。除此之外，本周保留两条需要继续复核的社区弱信号。",
     "events": [
+      {
+        "date": "08.05",
+        "brand": "google-nest",
+        "status": "变化",
+        "type": "PR / 合作",
+        "title": "Google Home 开放更多第三方摄像头接入",
+        "note": "已确认可在 Google Home 查看画面；不延伸推断为第三方摄像头已获得完整 Gemini AI 或 Google 录像。"
+      },
       {
         "date": "08.01—08.05",
         "brand": "eufy",
         "status": "弱信号",
+        "type": "风险 / 舆情",
         "title": "连接 / HomeBase / 回放稳定性讨论出现",
         "note": "社区个案，尚不能认定为系统性问题。"
       },
@@ -342,15 +651,18 @@
         "date": "本周",
         "brand": "simplisafe",
         "status": "弱信号",
+        "type": "风险 / 舆情",
         "title": "Outdoor Camera detection 表现出现个案质疑",
         "note": "仅作低置信度口碑观察，不视为产品策略变化。"
       }
     ]
   },
   "thirtyDay": {
-    "range": "2026-07-10 — 2026-08-08",
+    "range": "2026-07-08 — 2026-08-08",
     "headline": "五家都在讲 AI，但付费理由已经分叉。",
-    "summary": "本月最明确的新动作来自 Ring 的商业安防扩张与 SimpliSafe 的 Walmart 渠道扩张；其他三家以持续中的核心商业路线为主。",
+    "summary": "本月最明确的新动作来自 Ring 的商业安防扩张、SimpliSafe 的 Walmart 渠道扩张，以及 Google Home 的跨品牌摄像头接入；Arlo 和 eufy 以持续中的核心商业路线为主。",
+    "marketingHeadline": "增长动作在变重，声誉风险也从产品抱怨上升到隐私、可靠性与透明度。",
+    "marketingSummary": "Ring、SimpliSafe 与 Google 分别用商业渠道、大众零售和跨品牌平台扩大漏斗；Arlo 通过硬件套装绑定订阅，eufy 用本地 AI 与直营促销强化差异化。与此同时，人脸识别诉讼、服务中断、社区关闭和 App / 固件讨论需要按不同证据等级持续跟踪。",
     "routes": [
       { "brand": "eufy", "label": "Local AI", "detail": "本地存储 / 无云依赖" },
       { "brand": "arlo", "label": "AI SaaS", "detail": "硬件入口 / Secure 变现" },
@@ -362,6 +674,7 @@
   "methodology": [
     "优先记录官网、产品、价格、订阅、渠道与 Campaign 的可验证变化。",
     "社区讨论仅作为弱信号，不直接升级为品牌事实。",
+    "营销与声誉事件按官方、权威媒体、第三方监测、社区信号四档标记；诉讼与投诉均保留事实边界。",
     "Day 0 用于建立基线；从下一期起按上一期严格标记新增、变化、结束与持续。",
     "本期已校正时间口径：Arlo、Google Nest 与 eufy 的相关硬件主要发布于 2025，当前只作为持续阵容与战略，不误报为 2026 新品。"
   ]

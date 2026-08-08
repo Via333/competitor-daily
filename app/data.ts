@@ -8,6 +8,7 @@ export type BrandId =
 
 export type ViewId = "daily" | "seven" | "thirty" | "archive";
 export type SignalStatus = "新增" | "变化" | "结束" | "持续" | "近30天变化" | "弱信号";
+export type MarketingEventType = "Campaign" | "PR / 合作" | "渠道事件" | "风险 / 舆情";
 
 export interface Source {
   label: string;
@@ -52,6 +53,21 @@ export interface TopSignal {
   judgment: string;
 }
 
+export interface MarketingEvent {
+  id: string;
+  brand: Exclude<BrandId, "all">;
+  date: string;
+  type: MarketingEventType;
+  verification: "已确认" | "持续观察";
+  evidence: "官方 / 品牌方" | "权威媒体" | "第三方监测" | "社区信号";
+  confidence: "高" | "中" | "低";
+  impact: "high" | "medium" | "low";
+  title: string;
+  summary: string;
+  whyItMatters: string;
+  sources: Source[];
+}
+
 export interface Report {
   schemaVersion: number;
   date: string;
@@ -63,6 +79,11 @@ export interface Report {
   thesis: { eyebrow: string; title: string; body: string };
   metrics: { value: string; label: string }[];
   topSignals: TopSignal[];
+  marketingRadar?: {
+    headline: string;
+    summary: string;
+    events: MarketingEvent[];
+  };
   brands: BrandSnapshot[];
   sevenDay: {
     range: string;
@@ -72,6 +93,7 @@ export interface Report {
       date: string;
       brand: Exclude<BrandId, "all">;
       status: SignalStatus;
+      type?: MarketingEventType;
       title: string;
       note: string;
     }[];
@@ -80,6 +102,8 @@ export interface Report {
     range: string;
     headline: string;
     summary: string;
+    marketingHeadline?: string;
+    marketingSummary?: string;
     routes: {
       brand: Exclude<BrandId, "all">;
       label: string;
@@ -117,11 +141,11 @@ export const brandLabels: Record<BrandId, string> = {
 };
 
 export const brandAccents: Record<Exclude<BrandId, "all">, string> = {
-  eufy: "#55d9b3",
-  arlo: "#e0cd63",
-  simplisafe: "#ff6f57",
-  ring: "#56b8ff",
-  "google-nest": "#b69cff",
+  eufy: "#087d67",
+  arlo: "#856b00",
+  simplisafe: "#bd3f2b",
+  ring: "#176eaa",
+  "google-nest": "#6852a8",
 };
 
 export function formatArchiveDate(date: string) {

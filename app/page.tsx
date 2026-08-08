@@ -7,6 +7,7 @@ import {
   reports,
   type BrandId,
   type BrandSnapshot,
+  type MarketingEventType,
   type Report,
   type SignalStatus,
   type SnapshotItem,
@@ -42,16 +43,18 @@ function SectionHeading({
   eyebrow,
   title,
   aside,
+  headingId,
 }: {
   eyebrow: string;
   title: string;
   aside?: string;
+  headingId?: string;
 }) {
   return (
     <div className="section-heading">
       <div>
         <p className="eyebrow">{eyebrow}</p>
-        <h2>{title}</h2>
+        <h2 id={headingId}>{title}</h2>
       </div>
       {aside && <p className="section-aside">{aside}</p>}
     </div>
@@ -168,6 +171,115 @@ function BrandCard({
   );
 }
 
+function MarketingRadar({ report, brand }: { report: Report; brand: BrandId }) {
+  const [category, setCategory] = useState<"all" | MarketingEventType>("all");
+  const [showAll, setShowAll] = useState(false);
+  const radar = report.marketingRadar;
+
+  if (!radar) return null;
+
+  const categories: { id: "all" | MarketingEventType; label: string }[] = [
+    { id: "all", label: "全部事件" },
+    { id: "Campaign", label: "Campaign" },
+    { id: "PR / 合作", label: "PR / 合作" },
+    { id: "渠道事件", label: "渠道事件" },
+    { id: "风险 / 舆情", label: "风险 / 舆情" },
+  ];
+  const brandEvents = radar.events.filter((event) => brand === "all" || event.brand === brand);
+  const events = brandEvents
+    .filter((event) => category === "all" || event.type === category)
+    .sort((a, b) => b.date.localeCompare(a.date));
+  const visibleEvents = showAll ? events : events.slice(0, 8);
+  const confirmed = brandEvents.filter((event) => event.verification === "已确认").length;
+  const watching = brandEvents.filter((event) => event.verification === "持续观察").length;
+  const highImpact = brandEvents.filter((event) => event.impact === "high").length;
+
+  return (
+    <section className="content-section marketing-radar" aria-labelledby="marketing-heading">
+      <SectionHeading
+        eyebrow="02 / MARKETING & REPUTATION"
+        title="营销与声誉雷达"
+        aside="大型 Campaign、PR、渠道事件与负面舆情单独跟踪"
+        headingId="marketing-heading"
+      />
+
+      <div className="marketing-summary">
+        <div>
+          <p className="eyebrow">WHAT MOVED THE MARKET</p>
+          <h3>{radar.headline}</h3>
+          <p>{radar.summary}</p>
+        </div>
+        <dl>
+          <div><dt>高影响事件</dt><dd>{highImpact}</dd></div>
+          <div><dt>已确认</dt><dd>{confirmed}</dd></div>
+          <div><dt>持续观察</dt><dd>{watching}</dd></div>
+        </dl>
+      </div>
+
+      <div className="event-tabs" aria-label="营销事件类型">
+        {categories.map((item) => (
+          <button
+            type="button"
+            key={item.id}
+            className={category === item.id ? "event-tab event-tab--active" : "event-tab"}
+            aria-pressed={category === item.id}
+            onClick={() => setCategory(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+
+      {events.length > 0 ? (
+        <div className="event-grid">
+          {visibleEvents.map((event) => (
+            <article
+              key={event.id}
+              className={event.type === "风险 / 舆情" ? "event-card event-card--risk" : "event-card"}
+              style={brandStyle(event.brand)}
+            >
+              <div className="event-card__topline">
+                <span>{event.date}</span>
+                <span className={event.verification === "已确认" ? "verification verification--confirmed" : "verification verification--watch"}>
+                  {event.verification}
+                </span>
+              </div>
+              <div className="event-card__identity">
+                <span className="brand-dot" />
+                <strong>{brandLabels[event.brand]}</strong>
+                <span>{event.type}</span>
+              </div>
+              <h3>{event.title}</h3>
+              <p>{event.summary}</p>
+              <div className="event-impact">
+                <span>WHY IT MATTERS</span>
+                <p>{event.whyItMatters}</p>
+              </div>
+              <div className="event-card__footer">
+                <span>{event.evidence} · 置信度 {event.confidence}</span>
+                <div className="sources">
+                  {event.sources.map((source) => (
+                    <a key={source.url} href={source.url} target="_blank" rel="noreferrer">
+                      {source.label} <span aria-hidden="true">↗</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <EmptyState label="当前筛选下没有可确认的营销或声誉事件。" />
+      )}
+      {events.length > 8 && (
+        <button type="button" className="event-more" onClick={() => setShowAll((value) => !value)}>
+          {showAll ? "收起事件" : `查看全部 ${events.length} 条事件`}
+        </button>
+      )}
+    </section>
+  );
+}
+
 function DailyView({
   report,
   brand,
@@ -187,21 +299,25 @@ function DailyView({
           eyebrow="01 / SIGNALS"
           title="今天最值得关注的 5 个信号"
           aside="按战略重要性排序，不以新闻数量凑版面"
+          headingId="signals-heading"
         />
-        <div className="signal-grid" id="signals-heading">
+        <div className="signal-grid">
           {signals.map((signal) => (
             <SignalCard key={`${signal.brand}-${signal.rank}`} signal={signal} report={report} />
           ))}
         </div>
       </section>
 
+      <MarketingRadar report={report} brand={brand} />
+
       <section className="content-section" aria-labelledby="snapshot-heading">
         <SectionHeading
-          eyebrow="02 / LIVE SNAPSHOT"
+          eyebrow="03 / LIVE SNAPSHOT"
           title="当前重要动态快照"
           aside="持续中的核心动作也会保留，避免错过上一期后信息断层"
+          headingId="snapshot-heading"
         />
-        <div className="brand-stack" id="snapshot-heading">
+        <div className="brand-stack">
           {brands.map((item) => (
             <BrandCard key={item.id} brand={item} status={status} timeframe="daily" />
           ))}
@@ -233,6 +349,7 @@ function SevenDayView({ report, brand }: { report: Report; brand: BrandId }) {
               <div className="timeline-copy">
                 <div>
                   <span className="timeline-brand">{brandLabels[event.brand]}</span>
+                  {event.type && <span className="timeline-type">{event.type}</span>}
                   <span className={statusClass(event.status)}>{event.status}</span>
                 </div>
                 <h3>{event.title}</h3>
@@ -271,6 +388,15 @@ function ThirtyDayView({
             <p>{report.thirtyDay.summary}</p>
           </div>
         </div>
+        {report.thirtyDay.marketingHeadline && report.thirtyDay.marketingSummary && (
+          <aside className="trend-callout" aria-label="近 30 天营销与声誉趋势">
+            <span>MARKETING / REPUTATION</span>
+            <div>
+              <h3>{report.thirtyDay.marketingHeadline}</h3>
+              <p>{report.thirtyDay.marketingSummary}</p>
+            </div>
+          </aside>
+        )}
         <div className="route-map">
           {routes.map((route, index) => (
             <article key={route.brand} style={brandStyle(route.brand)}>
@@ -404,7 +530,7 @@ export default function Home() {
           <div className="hero-copy">
             <p className="hero-eyebrow">UNITED STATES · HOME SECURITY INTELLIGENCE</p>
             <h1>美国安防<br /><em>竞品雷达</em></h1>
-            <p className="hero-deck">eufy Security、Arlo、SimpliSafe、Ring 与 Google Nest 的产品、AI、订阅与渠道动作，放在同一张战略地图上。</p>
+            <p className="hero-deck">eufy Security、Arlo、SimpliSafe、Ring 与 Google Nest 的产品、AI、订阅、渠道、Campaign 与声誉风险，放在同一张战略地图上。</p>
             <div className="hero-edition">
               <span>{report.edition}</span>
               <p>{report.displayDate} · {report.market}市场</p>
